@@ -12,7 +12,7 @@ const TransactionsTable = styled.table`
   border-collapse: separate;
   border-spacing: 0 0.5rem;
 
-  /* margin-top: 1.5rem; */
+  margin-top: 1.5rem;
 
   td {
     padding: 1.5rem 2rem;
