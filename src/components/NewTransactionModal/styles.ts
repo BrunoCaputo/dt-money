@@ -70,4 +70,42 @@ const CloseButton = styled(Dialog.Close)`
   color: ${({ theme }) => theme["gray-500"]};
 `;
 
-export { CloseButton, Content, Overlay };
+const TransactionType = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+`;
+
+interface TransactionTypeButtonProps {
+  $variant: "income" | "outcome";
+}
+
+const TransactionTypeButton = styled.button<TransactionTypeButtonProps>`
+  background: ${({ theme }) => theme["gray-700"]};
+  color: ${({ theme }) => theme["gray-300"]};
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  svg {
+    color: ${({ $variant, theme }) =>
+      $variant === "income" ? theme["green-300"] : theme["red-300"]};
+  }
+`;
+
+export {
+  CloseButton,
+  Content,
+  Overlay,
+  TransactionType,
+  TransactionTypeButton,
+};
