@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Dialog from '@radix-ui/react-dialog'
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import { Controller, useForm } from 'react-hook-form'
 import { useContextSelector } from 'use-context-selector'
@@ -53,6 +54,10 @@ export function NewTransactionModal() {
 
       <Content>
         <Dialog.Title>Nova transação</Dialog.Title>
+
+        <Dialog.Description>
+          <VisuallyHidden.Root>New transaction form modal</VisuallyHidden.Root>
+        </Dialog.Description>
 
         <CloseButton>
           <X size={24} />
